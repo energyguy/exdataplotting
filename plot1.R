@@ -1,12 +1,4 @@
-#Date;
-#Time;
-#Global_active_power;
-#Global_reactive_power;
-#Voltage;Global_intensity;
-#Sub_metering_1;
-#Sub_metering_2;
-#Sub_metering_3
-# Script to read household power consumption file & subset data for period. Then produce plots.
+# Script to read household power consumption file & subset data for two days,then produce plots.
 
 #Read and subset text file into daraframe.
 # dates 2007-02-01 and 2007-02-02 - use as.Date() and strptime functions.
@@ -22,7 +14,7 @@ rm(list = ls())
 setwd("F:/coursera/")
 
 #Set path to folder where dataset, scripts and png files are stored
-dir<-"./eda/"
+dir<-"./exdataplotting1/"
 
 #Read records for 1/2/2007 to 2/2/2007 from dataset and store in dataframe
 DF<-data.frame(fread(paste(dir,"household_power_consumption.txt",sep=""),skip=66637, nrows=2880 ,header=FALSE))
